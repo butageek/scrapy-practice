@@ -11,7 +11,7 @@ from stem import Signal
 from stem.control import Controller
 
 
-class HttpbinSpiderMiddleware(object):
+class FlixsterSpiderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the spider middleware does not modify the
     # passed objects.
@@ -59,7 +59,7 @@ class HttpbinSpiderMiddleware(object):
         spider.logger.info('Spider opened: %s' % spider.name)
 
 
-class HttpbinDownloaderMiddleware(object):
+class FlixsterDownloaderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the downloader middleware does not modify the
     # passed objects.
@@ -111,23 +111,5 @@ class ProxyMiddleware(object):
         with Controller.from_port(port=9051) as controller:
             controller.authenticate(password='password')
             controller.signal(Signal.NEWNYM)
-
-        # try:
-        #     logging.info('Connecting to port...')
-        #     controller = Controller.from_port(port=9051)
-        # except stem.SocketError as exc:
-        #     logging.error(f"Unable to connect to tor on port 9051: {exc}")
-        #     sys.exit(1)
-
-        # try:
-        #     logging.info('Authenticating...')
-        #     controller.authenticate(password='password')
-        #     logging.info('Sending signal...')
-        #     controller.signal(Signal.NEWNYM)
-        #     logging.info('Closing controller...')
-        #     controller.close()
-        # except stem.connection.AuthenticationFailure as exc:
-        #     logging.error(f"Unable to authenticate: {exc}")
-        #     sys.exit(1)
 
         request.meta['proxy'] = 'http://127.0.0.1:8118'

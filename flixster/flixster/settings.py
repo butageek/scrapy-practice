@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for httpbin project
+# Scrapy settings for flixster project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,14 +9,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'httpbin'
+BOT_NAME = 'flixster'
 
-SPIDER_MODULES = ['httpbin.spiders']
-NEWSPIDER_MODULE = 'httpbin.spiders'
+SPIDER_MODULES = ['flixster.spiders']
+NEWSPIDER_MODULE = 'flixster.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'httpbin (+http://www.yourdomain.com)'
+#USER_AGENT = 'flixster (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -36,7 +36,7 @@ ROBOTSTXT_OBEY = True
 #COOKIES_ENABLED = False
 
 # Disable Telnet Console (enabled by default)
-# TELNETCONSOLE_ENABLED = False
+#TELNETCONSOLE_ENABLED = False
 
 # Override the default request headers:
 # DEFAULT_REQUEST_HEADERS = {
@@ -47,15 +47,15 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 # SPIDER_MIDDLEWARES = {
-#    'httpbin.middlewares.HttpbinSpiderMiddleware': 543,
+#    'flixster.middlewares.FlixsterSpiderMiddleware': 543,
 # }
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-    # 'httpbin.middlewares.HttpbinDownloaderMiddleware': 543,
+    #    'flixster.middlewares.FlixsterDownloaderMiddleware': 543,
     'scrapy_fake_useragent.middleware.RandomUserAgentMiddleware': 400,
-    'httpbin.middlewares.ProxyMiddleware': 410
+    'flixster.middlewares.ProxyMiddleware': 410
 }
 
 # Enable or disable extensions
@@ -67,7 +67,7 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 # ITEM_PIPELINES = {
-#    'httpbin.pipelines.HttpbinPipeline': 300,
+#    'flixster.pipelines.FlixsterPipeline': 300,
 # }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
