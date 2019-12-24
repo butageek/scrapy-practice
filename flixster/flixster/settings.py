@@ -55,7 +55,7 @@ ROBOTSTXT_OBEY = True
 DOWNLOADER_MIDDLEWARES = {
     #    'flixster.middlewares.FlixsterDownloaderMiddleware': 543,
     'scrapy_fake_useragent.middleware.RandomUserAgentMiddleware': 400,
-    'flixster.middlewares.ProxyMiddleware': 410
+    'flixster.middlewares.ProxyMiddleware': 410,
 }
 
 # Enable or disable extensions
@@ -66,9 +66,10 @@ DOWNLOADER_MIDDLEWARES = {
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-# ITEM_PIPELINES = {
-#    'flixster.pipelines.FlixsterPipeline': 300,
-# }
+ITEM_PIPELINES = {
+    #    'flixster.pipelines.FlixsterPipeline': 300,
+    'flixster.pipelines.DatabasePipeline': 400,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -90,3 +91,7 @@ DOWNLOADER_MIDDLEWARES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+# MongoDB settings
+MONGO_URI = 'localhost'
+MONGO_DB = 'flixster'

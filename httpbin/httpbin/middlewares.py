@@ -112,22 +112,4 @@ class ProxyMiddleware(object):
             controller.authenticate(password='password')
             controller.signal(Signal.NEWNYM)
 
-        # try:
-        #     logging.info('Connecting to port...')
-        #     controller = Controller.from_port(port=9051)
-        # except stem.SocketError as exc:
-        #     logging.error(f"Unable to connect to tor on port 9051: {exc}")
-        #     sys.exit(1)
-
-        # try:
-        #     logging.info('Authenticating...')
-        #     controller.authenticate(password='password')
-        #     logging.info('Sending signal...')
-        #     controller.signal(Signal.NEWNYM)
-        #     logging.info('Closing controller...')
-        #     controller.close()
-        # except stem.connection.AuthenticationFailure as exc:
-        #     logging.error(f"Unable to authenticate: {exc}")
-        #     sys.exit(1)
-
         request.meta['proxy'] = 'http://127.0.0.1:8118'
